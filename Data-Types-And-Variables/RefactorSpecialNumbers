@@ -1,0 +1,28 @@
+using System;
+
+namespace _09._Refactor_Special_Numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int count = int.Parse(Console.ReadLine());
+            int sum = 0;
+            bool verified = false;
+            for (int i = 1; i <= count; i++)
+            {
+                int iTemp = i;
+                while (iTemp > 0)
+                {
+                    sum += iTemp % 10;
+                    iTemp = iTemp / 10;
+                }
+                verified = (sum == 5) || (sum == 7) || (sum == 11);
+                Console.WriteLine($"{i} -> {verified}");
+                sum = 0;
+                //i = iTemp;
+            }
+
+        }
+    }
+}
